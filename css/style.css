@@ -1,4 +1,4 @@
-/*========== GLOBAL =======*/
+/* ============== GLOBAL STYLES ============= */
 body {
   font-family: "Roboto", sans-serif;
   color: #434455;
@@ -27,24 +27,38 @@ img {
   display: block;
   max-width: 100%;
 }
+button {
+  line-height: 0;
+  cursor: pointer;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 /*============= CONTAINER =========*/
 .container {
-  width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
 }
-.section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-/*======== HEADER ==========*/
+
+/*========  MOBILE HEADER ==========*/
 .header {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+  padding: 16px 0;
 }
 .page-header-container {
   display: flex;
@@ -59,69 +73,26 @@ img {
   letter-spacing: 0.03em;
   color: #4d5ae5;
   text-transform: uppercase;
-  margin-right: 76px;
 }
 .logo-accent {
   color: #2e2f42;
 }
-.link {
-  display: block;
-  padding: 24px 0;
-  color: #2e2f42;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.link:hover,
-.link:focus,
-.active {
-  color: #404bbf;
-}
-.current {
-  position: relative;
-  color: #404bbf;
-}
-.link.current::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
-}
-.navigation {
-  display: flex;
-  align-items: center;
-}
 .menu-list {
-  display: flex;
-  gap: 40px;
+  display: none;
 }
 
+.mobile-menu-open-button {
+  border: none;
+  background-color: transparent;
+  fill: #2f2f37;
+}
 .contact {
-  font-size: 16px;
-  font-style: normal;
+  display: none;
 }
-.contact-navigation {
-  display: flex;
-  gap: 40px;
-}
-.contact-link {
-  color: inherit;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.contact-link:hover,
-.contact-link:focus {
-  color: #404bbf;
-}
-/*========== SECTION HERO =========*/
+
+/* ================ / MOBILE HEADER ===== */
+/* -------------------------------------------- */
+/*========== MOBILE HERO =========*/
 .hero {
   background-color: #2e2f42;
   background-image: linear-gradient(
@@ -129,24 +100,25 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/people-office-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  max-width: 1440px;
-  margin: 0 auto;
+  background-size: 320px 432px;
+  margin-left: auto;
+  margin-right: auto;
   color: #ffffff;
-  padding: 188px 0;
+  padding: 72px 0;
 }
 .hero-title {
   text-align: center;
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 1.07;
-  letter-spacing: 0, 02em;
-  max-width: 496px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  max-width: 288px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 72px;
 }
 .hero-button {
   cursor: pointer;
@@ -161,7 +133,6 @@ img {
   border: none;
   padding: 16px 32px;
   border-radius: 4px;
-  margin-top: 48px;
   margin-left: auto;
   margin-right: auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -170,54 +141,55 @@ img {
 .hero-button:focus {
   background-color: #404bbf;
 }
-/* =================== SECTION 1 ========= */
-.advantages {
+
+@media screen and (min-resolution: 192dpi) and (min-width: 320px),
+  screen and (min-resolution: 2ddpx) and (min-width: 320px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 320px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-mobile@2x.jpg);
+  }
 }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/*========== /MOBILE HERO =========*/
+.section {
+  padding: 96px 0;
 }
+/* ================ MOBILE SECTION ADVANTAGES=========== */
 .advantages-flex {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
 }
 .advantages-list-item {
-  width: calc((100% - 72px) / 4);
+  width: 100%;
 }
+
 .advantages-icon {
-  background-color: #f4f4fd;
-  width: 264px;
-  height: 112px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  border: 1px solid #8e8f99;
-  margin-bottom: 8px;
+  display: none;
 }
 .advantages-title {
+  text-align: center;
   color: #2e2f42;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0, 02em;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 .advantages-text {
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  margin-bottom: 8px;
 }
-/* ======================= OUR TEAM ============== */
+
+/* ================ /MOBILE SECTION ADVANTAGES=========== */
+/* --------------------------------------------- */
+/* ======================= MOBILE TEAM ============== */
 .team {
   background-color: #f4f4fd;
   text-align: center;
@@ -239,11 +211,12 @@ img {
   line-height: 1.2;
   letter-spacing: 0.02em;
   text-align: center;
-  margin-bottom: 8px;
 }
 .team-list-item {
   background-color: #ffffff;
-  width: calc((100% - 72px) / 4);
+  width: 264px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
@@ -251,8 +224,10 @@ img {
 }
 .employee {
   padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-
 .social-icon-list {
   display: flex;
   justify-content: center;
@@ -278,17 +253,19 @@ img {
 .social-icon-link:focus {
   background-color: #404bbf;
 }
-/* ============ PORTFOLIO =========== */
+/* ===================== /MOBILE TEAM============ */
+/* --------------------------------------------- */
+/* ============ MOBILE PORTFOLIO =========== */
 .app-title {
   text-align: left;
 }
 .portfolio-list {
-  flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 .portfolio-list-item {
-  width: calc((100% - 48px) / 3);
+  width: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -331,30 +308,327 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+/* =================== /MOBILE PORTFOLIO=============== */
+/* ---------------------------------------------- */
+/* ============ WINDOW MOBILE MENU ========= */
+.window-menu-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+  background-color: #ffffff;
+}
+.mobile-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
+.mobile-navigation {
+  padding-top: 72px;
+  margin-bottom: 168px;
+}
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.menu-mobile-link {
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11; /* 111.111% */
+  letter-spacing: 0.02em;
+}
+.current {
+  position: relative;
+  color: #404bbf;
+}
+.mobile-contact {
+  margin-bottom: 48px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 0.02em;
+}
+.mobile-contact-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mobile-contact-link {
+  color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-contact-link:hover,
+.mobile-contact-link:focus {
+  color: #4d5ae5;
+}
+/* ============ /WINDOW MOBILE MENU ========= */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+  /* ============ TABLET HEADER ======== */
+  .header {
+    padding: 0;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    margin-right: 120px;
+  }
+  .menu-list {
+    display: flex;
+    gap: 40px;
+  }
+  .link {
+    display: block;
+    padding: 24px 0;
+    color: #2e2f42;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .link:hover,
+  .link:focus,
+  .active {
+    color: #404bbf;
+  }
+
+  .link.current::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+  }
+  .mobile-menu-open-button {
+    display: none;
+  }
+  .contact {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+  }
+  .contact-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-link {
+    color: inherit;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .contact-link:hover,
+  .contact-link:focus {
+    color: #404bbf;
+  }
+
+  /* ============ /TABLET HEADER ======== */
+  /* -------------------------------------- */
+  /* ============ TABLET HERO ======== */
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tablet.jpg);
+    background-size: 768px 436px;
+    padding: 112px 0;
+  }
+  .hero-title {
+    max-width: 496px;
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+  }
+  /* ============ /TABLET HERO ======== */
+  /* ----------------------------------------------- */
+  /* ============TABLET ADVANTAGES=========== */
+  .advantages-flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .advantages-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+  .advantages-title {
+    text-align: left;
+  }
+  /* ============ /TABLET ADVANTAGES=========== */
+  /* ----------------------------------------------- */
+  /* ================TABLET TEAM================== */
+  .team-list {
+    padding: 0 92px;
+    row-gap: 64px;
+  }
+  .team-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  /* ================ /TABLET TEAM================== */
+  /* ------------------------------------------- */
+  /* ================TABLET PORTFOLIO============ */
+  .portfolio-list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .portfolio-list-item{
+    width: calc((100% - 24px) / 2);
+    border: 1px solid #8e8f99;
+  
+  }
+  /* ================ /TABLET PORTFOLIO=========== */
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2ddpx) and (min-width: 768px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tablet@2x.jpg);
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+  /* ========== DESKTOP HEADER ======= */
+
+  .logo {
+    margin-right: 76px;
+  }
+  .contact {
+    font-size: 16px;
+  }
+  .contact-navigation {
+    flex-direction: row;
+    gap: 40px;
+  }
+  /* ========== /DESKTOP HEADER ======= */
+  /* ----------------------------------------------- */
+  /* ============ DESKTOP HERO =================== */
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-desktop.jpg);
+    background-size: 1440px 600px;
+    padding: 188px 0;
+  }
+  .hero-title {
+    margin-bottom: 48px;
+  }
+  /* ============ /DESKTOP HERO =================== */
+  /* ---------------------------------------------- */
+  /* =============DESKTOP ADVANTAGES============== */
+  .advantages-list-item {
+    width: calc((100% - 72px) / 4);
+  }
+  .advantages-icon {
+    background-color: #f4f4fd;
+    width: 264px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
+  }
+  .advantages-title {
+    color: #2e2f42;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .advantages-text {
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  /* ============= /DESKTOP ADVANTAGES============== */
+  /* ------------------------------------------------- */
+  /* ==============DESKTOP TEAM==================== */
+  .team-list {
+    padding: 0;
+  }
+  .team-list-item {
+    width: calc((100% - 72px) / 4);
+  }
+  /* ============== /DESKTOP TEAM==================== */
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1158px),
+  screen and (min-resolution: 2ddpx) and (min-width: 1158px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 1158px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-desktop@2x.jpg);
+  }
+}
+
 /* ===================== FOOTER ============ */
 .footer {
   background-color: #2e2f42;
   color: #f4f4fd;
   font-size: 16px;
   line-height: 1.5;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 72px;
 }
 .footer-left {
-  margin-right: 120px;
+  /* margin-right: 120px; */
 }
 .footer-link {
   color: #4d5ae5;
-  display: inline-block;
+  display: block;
   margin-bottom: 16px;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  text-align: center;
   text-transform: uppercase;
 }
 .logo-footer-accent {
@@ -368,11 +642,13 @@ img {
   max-width: 264px;
 }
 .footer-center {
-  margin-right: 80px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .social-text {
   color: #ffffff;
   font-weight: 500;
+  text-align: center;
   margin-bottom: 16px;
 }
 .footer-social-icon-list {
@@ -387,21 +663,23 @@ img {
 }
 .form-footer-input {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
 }
 .footer-input {
-  width: 264px;
+  width: 288px;
   height: 40px;
   background-color: inherit;
   border-radius: 4px;
   border: 1px solid #ffffff;
+  opacity: 0.3;
   color: #ffffff;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.04em;
   padding: 8px 16px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 .footer-input::placeholder {
   color: #ffffff;
@@ -410,7 +688,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 165px;
+  max-width: 165px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
@@ -420,6 +698,8 @@ img {
   line-height: 1.5;
   letter-spacing: 0.04em;
   padding: 8px 24px;
+  margin-left: auto;
+  margin-right: auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-submit-button:hover,
@@ -502,13 +782,6 @@ img {
   letter-spacing: 0.02em;
   margin-bottom: 16px;
 }
-/* .form {
-  color: #8e8f99;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-} */
 
 .container-modal-field {
   margin-bottom: 8px;
@@ -551,96 +824,7 @@ img {
 .container-modal-field-textarea {
   margin-bottom: 16px;
 }
-.form-comment {
-  width: 100%;
-  height: 120px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: rgba(46, 47, 66, 0.4);
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  background-color: transparent;
-  outline: 0px solid transparent;
-  resize: none;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-comment:focus {
-  border-color: #4d5ae5;
-}
-.form-comment::placeholder {
-  color: rgba(46, 47, 66, 0.4);
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-}
-/* =============== CASTOM CHECKBOX ========= */
-.container-modal-checkbox {
-  margin-bottom: 24px;
-}
-.form-label-checkbox {
-  color: #8e8f99;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-}
-.form-own-checkbox {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  cursor: pointer;
-  fill: transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-checkbox:checked + .form-label-checkbox > .form-own-checkbox {
-  background-color: #404bbf;
-  border-color: #404bbf;
-  border: none;
-  fill: #f4f4fd;
-}
-.form-checkbox:focus + .form-label-checkbox > .form-own-checkbox {
-  outline: 2px solid rgba(0, 0, 255, 0.5);
-}
-.form-own-checkbox-icon {
-  fill: #f4f4fd;
-  opacity: 0;
-}
-.form-checkbox:checked + .form-label-checkbox .form-own-checkbox-icon {
-  opacity: 1;
-}
-
-.modal-privacy-policy {
-  text-decoration: underline;
-  color: #4d5ae5;
-  line-height: 1.33;
-}
-.form-button-submit {
-  min-width: 169px;
-  height: 56px;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-  background-color: #4d5ae5;
-  cursor: pointer;
-  border-radius: 4px;
-  border: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding: 16px 32px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.mobile-social-list {
+  justify-content: flex-start;
+  gap: 40px;
 }
