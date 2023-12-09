@@ -265,9 +265,7 @@ button {
   gap: 48px;
 }
 .portfolio-list-item {
-  /* width: 100%; */
-  border: 1px solid #f4f4fd;
-  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+   border: 1px solid #f4f4fd;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -571,6 +569,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   margin-right: 8px;
   width: 16px;
   height: 16px;
@@ -643,6 +642,9 @@ button {
   z-index: 9999999;
   background-color: #ffffff;
 }
+.mobile-menu-container{
+  padding-top: 72px;
+}
 .mobile-close-button {
   position: absolute;
   top: 24px;
@@ -654,7 +656,6 @@ button {
   background-color: transparent;
 }
 .mobile-navigation {
-  padding-top: 72px;
   margin-bottom: 168px;
 }
 .menu-mobile {
@@ -662,6 +663,7 @@ button {
   flex-direction: column;
   gap: 40px;
 }
+
 .menu-mobile-link {
   color: #2e2f42;
   font-size: 36px;
@@ -669,10 +671,10 @@ button {
   line-height: 1.11; /* 111.111% */
   letter-spacing: 0.02em;
 }
+
 .current {
   position: relative;
-  color: #404bbf;
-}
+  }
 .mobile-contact {
   margin-bottom: 48px;
   font-size: 20px;
@@ -694,7 +696,9 @@ button {
 .mobile-contact-link:focus {
   color: #4d5ae5;
 }
-
+.accent-link{
+  color:#4d5ae5;
+}
 /* ============ /WINDOW MOBILE MENU ========= */
 
 @media screen and (min-width: 768px) {
@@ -731,7 +735,9 @@ button {
   .active {
     color: #404bbf;
   }
-
+.current{
+  color: #404bbf;
+}
   .link.current::after {
     content: "";
     position: absolute;
@@ -789,6 +795,9 @@ button {
   /* ============ /TABLET HERO ======== */
   /* ----------------------------------------------- */
   /* ============TABLET ADVANTAGES=========== */
+  .team-container{
+    width: 584px;
+  }
   .advantages-flex {
     flex-direction: row;
     flex-wrap: wrap;
@@ -804,8 +813,9 @@ button {
   /* ============ /TABLET ADVANTAGES=========== */
   /* ----------------------------------------------- */
   /* ================TABLET TEAM================== */
+  
   .team-list {
-    padding: 0 92px;
+    
     row-gap: 64px;
   }
   .team-list-item {
@@ -829,7 +839,7 @@ button {
   /* ==================TABLET FOOTER================= */
 
   .footer-container {
-    padding-left: 108px;
+    width: 584px;
     flex-direction: row;
     flex-wrap: wrap;
     column-gap: 24px;
@@ -902,6 +912,7 @@ button {
       ),
       url(../images/people-office-desktop.jpg);
     background-size: 1440px 600px;
+    max-width: 1440px;
     padding: 188px 0;
   }
   .hero-title {
