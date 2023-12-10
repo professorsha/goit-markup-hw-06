@@ -656,7 +656,7 @@ button {
   background-color: transparent;
 }
 .mobile-navigation {
-  margin-bottom: 168px;
+  margin-bottom: auto;
 }
 .menu-mobile {
   display: flex;
