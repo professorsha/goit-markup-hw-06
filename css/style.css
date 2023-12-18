@@ -800,7 +800,7 @@ button {
   /* ----------------------------------------------- */
   /* ============TABLET ADVANTAGES=========== */
   .team-container{
-    width: 584px;
+    max-width: 584px;
   }
   .advantages-flex {
     flex-direction: row;
